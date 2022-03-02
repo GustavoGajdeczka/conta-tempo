@@ -1,0 +1,28 @@
+.tree-root {
+  .tree-node {
+    .tree-anchor {
+      font-size: .85rem;
+    }
+    .tree-checkbox {
+      width: 1.25rem;
+      height: 1.25rem;
+      &.checked,
+      &.indeterminate {
+        background-color: theme-color(secondary);
+        border-color: theme-color(secondary);
+      }
+      &.checked:after {
+        top: .188rem;
+        left: .375rem;
+        width: .25rem;
+        height: .4375rem;
+        transform: rotate(45deg) scaleY(0);
+        transition: transform .25s;
+        transform-origin: center;
+      }
+      &.checked:after {
+        transform: rotate(45deg) scaleY(1);
+      }
+    }
+  }
+}

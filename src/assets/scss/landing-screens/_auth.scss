@@ -1,0 +1,76 @@
+/* Auth */
+
+.auth {
+  .auth-form-dark {
+    background: theme-color(primary);
+    color: $white;
+    .form-control {
+      border-color: $white;
+      background-color: $white;
+    }
+  }
+  .auth-form-transparent {
+    background: transparent;
+    .form-control,
+    .input-group-text {
+      border-color: theme-color(secondary);
+      &:focus,
+      &:active {
+        border-color: theme-color(secondary);
+      }
+    }
+    select {
+      outline-color: theme-color(secondary);
+    }
+  }
+  &.auth-img-bg {
+    padding: 0;
+    .auth-form-transparent {
+      @media (min-width: 768px) {
+        width: 78%;
+        margin: auto;
+      }
+    }
+  }
+  .brand-logo {
+    margin-bottom: 2rem;
+    text-align: center;
+    img {
+      width: 250px;
+    }
+  }
+  form {
+    [type=submit].btn {
+      font-size: 1rem;
+      color: $white
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+      label {
+        font-size: 0.8125rem;
+      }
+      .form-control {
+        background: $white;
+        border-radius: 0;
+        font-size: 0.9375rem;
+      }
+      .form-control.is-invalid,
+      .form-control:invalid {
+        border-color: theme-color(primary)
+      }
+      .invalid-feedback {
+        color: map-get($colors, white)
+      }
+    }
+    .auth-form-btn {
+      height: 50px;
+      padding: 1rem;
+    }
+    .auth-link {
+      font-size: $default-font-size;
+      &:hover {
+        color: initial;
+      }
+    }
+  }
+}

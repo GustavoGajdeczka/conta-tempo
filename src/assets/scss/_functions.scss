@@ -1,0 +1,32 @@
+// Functions
+
+@function social-color($key: "twitter") {
+  @return map-get($social-colors, $key);
+}
+
+@function colors($key: "white") {
+  @return map-get($colors, $key);
+}
+
+// Social Color
+@each $color, $value in $colors {
+  .text-#{$color} {
+    @include text-color(colors($color));
+  }
+}
+
+// Social Color
+@each $color, $value in $social-colors {
+  .text-#{$color} {
+    @include text-color(social-color($color));
+  }
+}
+
+@each $color, $value in $social-colors {
+  .bg-#{$color} {
+    background: social-color($color);
+  }
+}
+@function theme-gradient-color($key: "primary") {
+  @return map-get($theme-gradient-colors, $key);
+}

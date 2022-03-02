@@ -1,0 +1,11 @@
+@import "~compass-mixins/lib/compass/functions";
+@import "~compass-mixins/lib/compass/css3/box-shadow";
+@import "~compass-mixins/lib/compass/css3/flexbox";
+@import "~compass-mixins/lib/compass/css3/transition";
+
+@import "~compass-mixins/lib/animation/_core";
+
+// Alias - conflito com BS4
+@mixin c-box-shadow($settings) {
+  @include box-shadow($settings)
+}

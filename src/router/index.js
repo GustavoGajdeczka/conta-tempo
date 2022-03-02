@@ -1,22 +1,40 @@
 import Vue from 'vue';
 import VueRouter from "vue-router";
+import Layout from '../layout';
 
-import Home from '../pages/Home'
-import Login from '../pages/Login'
 
 Vue.use(VueRouter)
 
 const routes = [
+
+  //Home
   {
-    path: '/',
-    name: 'home',
-    component: Home
+    path: "",
+    component: Layout,
+    children: [
+      {
+        path:"/",
+        name:"home",
+        component: () => import(/* webpackChunkName: "home" */ "@/pages/Home")
+      }
+    ]
   },
+  //Autenticação
   {
-    path: '/login',
-    name: 'login',
-    component: Login
-  }
+    path: "/login",
+    component: {
+      render(c) {
+        return c("router-view");
+      }
+    },
+    children: [
+      {
+        path: "login",
+        name: "login",
+        component: () => import(/* webpackChunkName: "login" */ "@/pages/Login")
+      }
+    ]
+  },
 ]
 
 const router = new VueRouter({routes})

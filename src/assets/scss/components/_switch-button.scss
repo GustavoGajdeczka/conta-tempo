@@ -1,0 +1,27 @@
+.vue-js-switch {
+  font-size: .75rem !important;
+
+  .v-switch-label {
+    color:colors(gray-light) !important;
+    font-weight: 500 !important;
+  }
+  .v-switch-core {
+    border: 1px solid $border-color !important;
+    background-color: colors(gray-lightest) !important;
+    .v-switch-button {
+      background-color: colors(gray) !important;
+    }
+  }
+
+  &.toggled {
+    .v-switch-label {
+      color: theme-color(primary) !important;
+    }
+    .v-switch-core {
+      background-color: colors(gray-lightest) !important;
+      .v-switch-button {
+        background-color: theme-color(secondary) !important;
+      }
+    }
+  }
+}
